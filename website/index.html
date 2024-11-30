@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech Fest 2024</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header Section with Video Background -->
+  <header>
+    <video autoplay loop muted playsinline class="header-video">
+      <source src="https://videos.pexels.com/video-files/6153734/6153734-uhd_2732_1440_25fps.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="overlay">
+      <h1>YUKTHI</h1>
+    </div>
+  </header>
+
+    <!-- Navigation Bar Below Header -->
+    <nav class="navbar">
+      <ul>
+        <!-- Logo added here -->
+        <li class="logo">
+          <a href="index.html">
+            <img src="logo.png" alt="Yukthi Tech Fest Logo" class="logo-img">
+          </a>
+        </li>
+        <!-- Navigation Links -->
+        <li><a href="index.html">Home</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="community.html">Community</a></li>
+      </ul>
+    </nav>
+    
+  
+
+  <!-- Introduction Section -->
+  <section class="intro">
+    <h2>About the Event</h2>
+    <p>The Yukthi Tech Fest brings students together to showcase groundbreaking technology and creativity in a variety of disciplines.</p>
+  </section>
+
+  <!-- Events Section -->
+  <section class="events">
+    <h2>Events</h2>
+    <div class="card-container">
+      <div class="card">
+        <h3>Hackathon</h3>
+        <p>A 24-hour coding challenge to create the next big thing!</p>
+      </div>
+      <div class="card">
+        <h3>Robotics</h3>
+        <p>Witness cutting-edge robots in action!</p>
+      </div>
+      <div class="card">
+        <h3>Tech Talks</h3>
+        <p>Learn from industry experts and innovators.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Community Overview -->
+  <section class="community">
+    <h2>Community</h2>
+    <div class="card-container">
+      <div class="card">
+        <h3>Workshops</h3>
+        <p>Hands-on experience in various fields.</p>
+      </div>
+      <div class="card">
+        <h3>Networking</h3>
+        <p>Connect with like-minded individuals.</p>
+      </div>
+      <div class="card">
+        <h3>Showcase</h3>
+        <p>Demonstrations of innovative projects.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <!-- Social Media Section -->
+    <h2>Social Media</h2>
+    <div class="social-media">
+      <a href="https://www.instagram.com/yukthi2.0?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Follow Us on Instagram</a>
+    </div>
+    <br>
+  
+    <!-- Contact Form -->
+    <h2>Contact Us</h2>
+    <form action="/contact" method="POST">
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name" required><br><br>
+  
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email" required><br><br>
+  
+      <label for="message">Message:</label><br>
+      <textarea id="message" name="message" rows="4" required></textarea><br><br>
+  
+      <button type="submit">Submit</button>
+    </form>
+    <br>
+  
+    <!-- Google Map -->
+    <h2>Find Us Here</h2>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3922.687018302476!2d76.21614807480113!3d10.525298789608629!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7ee4e9c2607a3%3A0x1c0113efb43b242a!2sSt.%20Mary&#39;s%20College%20Autonomous%20 Thrissur!5e0!3m2!1sen!2sin!4v1732126534721!5m2!1sen!2sin"
+      width="100%"
+      height="450"
+      style="border:0; border-radius: 10px;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  
+    <br>
+    <!-- Footer Text -->
+    <p>&copy; 2024 Yukthi Tech Fest. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

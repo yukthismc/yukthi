@@ -1,0 +1,322 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body, h1, h2, p {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background: black;
+  line-height: 1.6;
+  color: #461153;
+}
+
+/* Header Section */
+.header-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the video covers the header without distortion */
+  z-index: -1; /* Places it behind the overlay */
+}
+
+header {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Ensures it takes the full viewport height */
+  overflow: hidden; /* Ensures no parts of the video overflow */
+}
+
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Lobster', cursive; /* Replace 'Lobster' with your chosen font */
+  font-size: 4rem; /* Adjust size to fit your design */
+  color: #fff; /* White text color */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Adds a subtle shadow for readability */
+  text-align: center;
+  z-index: 10;
+}
+
+.overlay h1 {
+  font-family: 'Orbitron', sans-serif; /* Futuristic, digital font */
+  font-size: 6rem; /* Large for emphasis */
+  color: #64016d; /* Light cyan color for a digital/tech feel */
+  text-transform: uppercase;
+  letter-spacing: 12px; /* Spacing to give it a mechanical vibe */
+  position: relative;
+  text-align: center;
+  z-index: 2;
+  text-shadow: 0 0 8px #53044bb3, 0 0 15px #520565cc, 0 0 25px #710075;
+  animation: scan-line 2s infinite linear; /* Adding a techy scan line effect */
+}
+
+/* Digital "Scan Line" animation effect */
+/* @keyframes scan-line {
+  0% {
+    background: linear-gradient(90deg, #00ffccb3 25%, transparent 25%, transparent 50%, rgba(0, 255, 204, 0.7) 50%, rgba(0, 255, 204, 0.7) 75%, transparent 75%, transparent);
+    background-size: 200% 100%;
+    color: #00ffcc;
+  }
+  100% {
+    background-position: 100% 0;
+    color: #00ffcc;
+  }
+} */
+
+/* Adding a border that mimics a circuit or frame */
+.overlay h1::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%;
+  height: 120%;
+  background: rgba(28, 1, 28, 0.3);
+  border-radius: 10px;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  box-shadow: 0 0 15px #f200ffb3;
+  animation: borderScan 2s infinite linear;
+}
+
+/* Circuit-like border effect
+@keyframes borderScan {
+  0% {
+    box-shadow: 0 0 5px #00ffccb3, 0 0 15px #00ffcc80;
+  }
+  50% {
+    box-shadow: 0 0 20px #00ffcce6, 0 0 40px #00ffcc99;
+  }
+  100% {
+    box-shadow: 0 0 5px #00ffccb3, 0 0 15px #00ffcc80;
+  }
+} */
+
+/* Additional Digital Flicker Effect */
+.overlay h1:hover {
+  animation: flickerEffect 1.5s infinite alternate;
+}
+
+/* Flicker animation to make it feel more digital */
+@keyframes flickerEffect {
+  0% {
+    opacity: 1;
+    text-shadow: 0 0 15px #6f0a6380, 0 0 25px #69036b99;
+  }
+  50% {
+    opacity: 0.7;
+    text-shadow: 0 0 10px #f200ffb3, 0 0 20px 6f0a6380(0, 255, 204, 0.7);
+  }
+  100% {
+    opacity: 1;
+    text-shadow: 0 0 15px rgba(68, 10, 59, 0.9), 0 0 25px rgb(64, 5, 75);
+  }
+}
+
+
+
+.overlay p {
+  background: linear-gradient(90deg, #ff6f61, #ffcc00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Navigation Bar */
+/* Navbar Styling */
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 20;
+  padding: 10px 0; /* Adjust navbar padding to give space for the logo */
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  align-items: center; /* Vertically center the logo and menu items */
+}
+
+.navbar ul li {
+  margin: 0 20px;
+}
+
+/* Logo Styling */
+.navbar .logo {
+  margin-right: auto; /* Pushes the logo to the left */
+}
+
+.navbar .logo-img {
+  height: 50px; /* Adjust logo size */
+  width: auto;
+  display: block;
+}
+
+/* Navigation Links Styling */
+.navbar ul li a {
+  text-decoration: none;
+  color: #4b015f;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  display: inline-block;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.navbar ul li a:hover {
+  background-color: #222222;
+  color: rgb(103, 1, 126);
+  transform: scale(1.1);
+}
+
+
+/* Section Styling */
+section {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.intro, .events, .community {
+  background: #000000;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+p {
+  font-size: 1.1rem;
+  margin: 10px 0;
+  color: #666;
+}
+
+/* Card Container */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  background: rgb(24, 1, 56);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  text-align: center;
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: purple;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Footer Styles */
+footer {
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+footer h2 {
+  margin-bottom: 15px;
+  font-size: 24px;
+  color: purple;
+}
+
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+form label {
+  font-weight: bold;
+  color: silver;
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form button {
+  padding: 10px 20px;
+  background-color: purple;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: silver;
+  color: black;
+}
+
+/* Social Media Styles */
+.social-media a {
+  color: silver;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.social-media a:hover {
+  color: purple;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .overlay {
+    font-size: 2rem; /* Adjust font size for smaller screens */
+  }
+
+  footer h2 {
+    font-size: 20px;
+  }
+
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 90%;
+    margin-bottom: 20px;
+  }
+}
