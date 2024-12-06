@@ -77,7 +77,7 @@ header {
 } */
 
 /* Adding a border that mimics a circuit or frame */
-.overlay h1::before {
+/* .overlay h1::before {
   content: '';
   position: absolute;
   top: 50%;
@@ -90,7 +90,7 @@ header {
   z-index: -1;
   box-shadow: 0 0 15px #f200ffb3;
   animation: borderScan 2s infinite linear;
-}
+} */
 
 /* Circuit-like border effect
 @keyframes borderScan {
