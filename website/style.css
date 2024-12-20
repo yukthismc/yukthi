@@ -156,7 +156,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(26, 22, 22, 0.6);
+  background: rgba(14, 13, 13, 0.6);
   z-index: 20;
   padding: 10px 0; /* Adjust navbar padding to give space for the logo */
 }
