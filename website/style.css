@@ -491,8 +491,102 @@ form button:hover {
   margin: 0;
 }
 
-/* Heading and Paragraph styling */
-.event h1, .after-movie p {
-  margin: 0;
-  padding: 20px;
+/* Heading styling */
+.event h1 {
+  text-align: center; /* Center the heading */
+  margin: 80px 10; /* Add margin for spacing */
+  text-size-adjust: 50%;
+}
+
+/* Flex container for image and paragraph */
+.eventh {
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+  padding: 200px;
+}
+
+.text-section {
+  margin-right: 100px; /* Space between text and image */
+}
+
+.image-section img {
+  max-width: 50%; /* Responsive image */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Optional: rounded corners */
+}
+
+
+/* Heading styling */
+.main h1 {
+  text-align: center; /* Center the heading */
+  margin: 80px 10; /* Add margin for spacing */
+  text-size-adjust: 50%;
+}
+
+/* Flex container for image and paragraph */
+.mainth {
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+  padding: 200px;
+}
+
+.main {
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Center items vertically */
+}
+
+.card-container {
+  position: relative;
+  width: 300px; /* Set the width of the card */
+  height: 400px; /* Set the height of the card */
+  perspective: 1000px; /* Adds perspective to the 3D effect */
+  margin-right: 20px; /* Space between card and text */
+}
+
+.flip-card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d; /* Enable 3D transformations */
+  transition: transform 0.6s; /* Animation duration */
+}
+
+.card-container:hover .flip-card {
+  transform: rotateY(180deg); /* Flip the card on hover */
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Hide the back face when flipped */
+}
+
+.flip-card-front {
+  background-color: #fff; /* Background color for the front */
+}
+
+.flip-card-back {
+  background-color: #fff; /* Background color for the back */
+  transform: rotateY(180deg); /* Rotate the back face */
+}
+
+.flip-card img {
+  max-width: 100%; /* Responsive image */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Optional: rounded corners */
+}
+
+.text-section {
+  max-width: 400px; /* Set a max width for the text section */
+}
+
+.text-section h2 {
+  margin: 0 0 10px; /* Spacing for heading */
+}
+
+.text-section p {
+  margin: 0; /* Remove default margin */
 }
