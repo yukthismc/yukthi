@@ -4,12 +4,17 @@
     "description": "A brief description of your project",
     "main": "index.js",
     "scripts": {
-        "start": "node index.js"
+        "start": "node index.js",
+        "build": "webpack --mode production"
     },
     "dependencies": {
         "body-parser": "^1.20.3",
         "express": "^4.21.1",
-        "mongoose": "^5.10.9",
+        "mongoose": "^8.9.2",
         "nodemailer": "^6.9.16"
+    },
+    "devDependencies": {
+        "webpack": "^5.97.1",
+        "webpack-cli": "^6.0.1"
     }
 }

@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",(()=>{document.querySelector("h1").textContent="Welcome to Yukthi!",document.querySelectorAll(".navbar a").forEach((e=>{e.addEventListener("click",(t=>{t.preventDefault();const o=e.getAttribute("href");document.querySelector(o).scrollIntoView({behavior:"smooth"})}))}))}));
