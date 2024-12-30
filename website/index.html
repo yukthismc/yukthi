@@ -45,6 +45,7 @@
       So join us in this great festival of learning and sharing of ideas as Yukthi awaits for you, to help in exploring the tech in you!</p>
   </section>
 
+
 <!-- AFTER MOVIE Section -->
 <section class="after-movie">
   <h2>After Movie</h2>
@@ -204,6 +205,23 @@
        <a href="https://www.instagram.com/yukthi2.0?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Follow Us on Instagram</a>
      </div>
      <br>
+
+     <button class="scroll-top" id="scrollTopBtn">↑</button>
+
+      // Scroll-to-top functionality
+      const scrollTopBtn = document.getElementById('scrollTopBtn');
+      window.addEventListener('scroll', () => {
+          if (window.scrollY > 300) {
+              scrollTopBtn.classList.add('visible');
+          } else {
+              scrollTopBtn.classList.remove('visible');
+          }
+      });
+
+      scrollTopBtn.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+  </script>
    
 
     <!-- Footer Text -->

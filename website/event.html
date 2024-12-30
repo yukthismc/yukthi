@@ -1,64 +1,517 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>YUKTHI EVENTS</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yukthi 2.0 Events</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0b0a0b;
+            color: #f0f0f0;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(14, 13, 13, 0.8);
+            z-index: 20;
+            padding: 10px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+            align-items: center;
+        }
+
+        .navbar ul li {
+            margin: 0 20px;
+        }
+
+        .navbar .logo {
+            margin-right: auto;
+        }
+
+        .navbar .logo-img {
+            height: 50px;
+            width: auto;
+            display: block;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: #6b0488;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 10px 20px;
+            display: inline-block;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar ul li a:hover {
+            background-color: #222222;
+            color: #6b0488;
+            transform: scale(1.1);
+        }
+
+        .header {
+            background: url('header-bg.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 4rem;
+            animation: fadeInDown 1.5s ease;
+        }
+
+        .header p {
+            margin: 10px 0;
+            font-size: 150%;
+            animation: fadeInUp 1.5s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #470243;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 0.5s ease; /* Fade-in animation */
+        }
+
+        .competition {
+            margin-bottom: 20px;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .competition h2 {
+            color: #ffffff;
+            margin-bottom: 10px;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        .competition p {
+            color: #ffffff;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        .coordinator {
+            margin-top: 10px;
+ font-weight: bold;
+            color: #cfb7cf;
+        }
+
+        footer {
+            border-top: 4px solid #a368fc;
+            background: #0a070d;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .card {
+            width: 300px;
+            height: 400px;
+            perspective: 1000px;
+            margin: 0 auto; /* Center the card */
+            transition: transform 0.3s ease; /* Smooth transition */
+        }
+
+        .card-inner {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            position: relative;
+        }
+
+        .card:hover .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .card-front,
+        .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 8px; /* Rounded corners */
+        }
+
+        .card-front {
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-back {
+            background: #f0f0f0;
+            transform: rotateY(180deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-front img, 
+        .card-back img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px; /* Add border radius for a smoother look */
+        }
+
+        .event p {
+            margin: 10px 0;
+        }
+
+        .eventh {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .text-section {
+            margin-right: 50px;
+        }
+
+        .image-section img {
+            max-width: 50%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #6b0488;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            background: #800080;
+            transform: scale(1.1);
+        }
+
+
+    </style>
 </head>
 <body>
-    <!-- Navigation Bar Below Header -->
-    <nav class="navbar">
-      <ul>
-        <!-- Logo added here -->
-        <li class="logo">
-          <a href="index.html">
-            <img src="logo.png" alt="Yukthi Tech Fest Logo" class="logo-img">
-          </a>
-        </li>
-        <!-- Navigation Links -->
-        <li><a href="index.html">Home</a></li>
-        <li><a href="event.html">Events</a></li>
-        <li><a href="https://forms.gle/Dp3X1TQ6AgUd7F8MA">Register</a></li>
-      </ul>
-    </nav>
+  <nav class="navbar">
+    <ul>
+      <li class="logo">
+        <a href="index.html">
+          <img src="logo.png" alt="Yukthi Tech Fest Logo" class="logo-img">
+        </a>
+      </li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="event.html">Events</a></li>
+      <li><a href="https://forms.gle/Dp3X1TQ6AgUd7F8MA">Register</a></li>
+    </ul>
+  </nav>
 
-    <header>
+    <header class="header">
+      <h1>YUKTHI 2.0 EVENTS</h1>
       <div class="eventh">
         <div class="text-section">
-            <h2>YUKTHI 2.0 EVENTS</h2>
             <p>Yukthi is a joyous collaboration of art and technology which every techie dreams of.
               Yukthi not only celebrates innovation but also aspires to upgrade every skill within you. 
               It cherishes the spirit of music, dance and art with a digital touch.</p>
         </div>
-        <div class="image-section">
+ <div class="image-section">
             <img src="1.jpg" alt="img of yukthi's brochure">
         </div>
-    </div>
+      </div>
+    
     </header>
 
-
-    <section class="intro">
-      <p>Welcome to Yukthi TechFest Events, explore the tech in you!<br></p>
-    </section>
-  
-
-    <section class="main">
-      <div class="card">
-        <div class="card-front">
-          <img src="front-image.jpg" alt="Front Image">
+    <main>
+        <div class="container">
+            <div class="competition">
+                <h2><i class="fas fa-question-circle"></i> CrackIT<br>(IT QUIZ)</h2>
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                          <img src="2 (17).jpeg" alt="img of yukthi's brochure">
+                        </div>
+                        <div class="card-back">
+                          <img src="2 (18).jpeg" alt="img of yukthi's brochure">
+                        </div>
+                    </div>
+                </div>
+                <p class="coordinator">
+                  Student Coordinators:<br>
+                  Dalishia Samson [+91 8281691904] <br>
+                  Shafna S [+91 8157947144] <br>
+                  <br>
+                  Faculty Coordinators:<br>
+                  Jiji M Antony [+91 996 127 3429]<br>
+                  Betsy Chacko [+91 944 601 1233]</p>
+            </div>
         </div>
-        <div class="card-back">
-          <img src="back-image.jpg" alt="Back Image">
+
+        <div class="container">
+            <div class="competition">
+                <h2><i class="fas fa-paint-brush"></i> MYSTIC MASK <br>(Face painting)</h2>
+                <div class="card">
+                    <div class="card-inner">
+                      <div class="card-front">
+                        <img src="2 (5).jpeg" alt="img of yukthi's brochure">
+                      </div>
+                      <div class="card-back">
+                        <img src="2 (6).jpeg" alt="img of yukthi's brochure">
+                      </div>
+                    </div>
+                </div>
+                <p class="coordinator">
+                  STUDENT COORDINATORS:<br>
+                   Shahana A.S [+91 996 195 8295]<br>
+                  Nandhana k [+91 808 929 6017]<br> 
+                  <br>
+                  STAFF COORDINATOR :<br>
+                  Mancy Thomas P [+91 96056 11098]</p>
+            </div>
         </div>
+
+        <div class="container">
+            <div class="competition">
+                <h2><i class="fas fa-camera"></i> IMAJICA <br>(Photography)</h2>
+                <div class="card">
+                    <div class="card-inner">
+                      <div class="card-front">
+                        <img src="2 (15).jpeg" alt="img of yukthi's brochure">
+                      </div>
+                      <div class="card-back">
+                        <img src="2 (14).jpeg" alt="img of yukthi's brochure">
+                      </div>
+                    </div>
+                </div>
+                <p class="coordinator">
+                  STUDENT COORDINATORS:<br>
+                  Divina Jeeson[+91 854 787 7769] <br>
+                 Niya Deepu[+91 7902 892 673]<br>
+                 <br>
+                  FACULTY COORDINATOR:<br>
+                  Jiji M Antony[+91 996 127 3429]</p>
+            </div>
+        </div>
+
+        <div class="container">
+          <div class="competition">
+              <h2><i class="fas fa-music"></i> Rhythm Rebels<br>(Group Dance)</h2>
+              <div class="card">
+                  <div class="card-inner">
+                    <div class="card-front">
+                      <img src="2 (11).jpeg" alt="img of yukthi's brochure">
+                    </div>
+                    <div class="card-back">
+                      <img src="2 (12).jpeg" alt="img of yukthi's brochure">
+                    </div>
+                  </div>
+              </div>
+              <p class="coordinator">
+                  Student Coordinators: <br>
+                  Surya MS [+91 9778196676]<br>
+                  Malavika M [+91 99472 06973]<br>
+                  <br>
+                  Faculty Coordinators: <br>
+                  Praseetha E [+91 94465 87993] <br>
+                  Mridula Muraleedharan [+91 80789 86839]</p>
+          </div>
       </div>
-    </section>
 
-        <!-- Footer Text -->
+      <div class="container">
+        <div class="competition">
+            <h2><i class="fas fa-bug"></i> Glitch Gala<br>(Debugging)</h2>
+            <div class="card">
+                <div class="card-inner">
+                  <div class="card-front">
+                    <img src="2 (10).jpeg" alt="img of yukthi's brochure">
+                  </div>
+                  <div class="card-back">
+                    <img src="2 (8).jpeg" alt="img of yukthi's brochure">
+                  </div>
+                </div>
+            </div>
+            <p class="coordinator">
+                Student Coordinator:<br>
+                Drisya C C [ +91 8606303261 ] <br>
+                Devi Prabha [ +91 83300 13350 ] <br>
+                <br>
+                Staff Coordinator:<br>
+                Manasy Jayasurya [ +91 94968 39530 ]</p>
+        </div>
+    </div>
+
+    <div class="container">
+      <div class="competition">
+          <h2><i class="fas fa-map-marker-alt"></i> Cryptic Crusaders<br>(Treasure Hunt)</h2>
+          <div class="card">
+              <div class="card-inner">
+                <div class="card-front">
+                  <img src="2 (9).jpeg" alt="img of yukthi's brochure">
+                </div>
+                <div class="card-back">
+                  <img src="2 (13).jpeg" alt="img of yukthi's brochure">
+                </div>
+              </div>
+          </div>
+          <p class="coordinator">
+              Student Coordinator : <br>
+              Devika PS  [+91 7592045103, 9633753818]<br>
+              Anagha Shaju [+91 95673 57507]<br>
+              <br>
+              Faculty Coordinator : <br>
+              Mancy Thomas P  [+91 96056 11098]<br>
+              Archana CS [+91 90482 72625]</p>
+      </div>
+  </div>
+
+    <div class="container">
+      <div class="competition">
+          <h2><i class="fas fa-star"></i> Beat Battle <br>(Spot choreography)</h2>
+          <div class="card">
+              <div class="card-inner">
+                <div class="card-front">
+                  <img src="2 (3).jpeg" alt="img of yukthi's brochure">
+                </div>
+                <div class="card-back">
+                  <img src="2 (7).jpeg" alt="img of yukthi's brochure">
+                </div>
+              </div>
+          </div>
+          <p class="coordinator">
+              Student coordinator: <br>
+              Abina P [+91 7356631423 ] <br>
+              Catherin Joy [+91 8547876080]<br>
+              <br>
+              Staff Coordinator:<br>
+              Mridula Muraleedharan [+91 8078986839] <br>
+              Manasy Jayasurya [+91 9496839530] </p>
+      </div>
+  </div>
+
+  <div class="container">
+    <div class="competition">
+        <h2><i class="fas fa-code"></i> Sightless Syntax<br>(Blind Coding)</h2>
+        <div class="card">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="2 (4).jpeg" alt="img of yukthi's brochure">
+              </div>
+              <div class="card-back">
+                <img src="2 (2).jpeg" alt="img of yukthi's brochure">
+              </div>
+            </div>
+        </div>
+        <p class="coordinator">
+            Student Coordinators:<br>
+            Sania Prasad [+91 94498 24203]<br>
+            Merin Benny [+91 92884 00266]<br>
+            <br>
+            Faculty Coordinator : <br>
+            Archana C S [+91 90482 72625 ] </p>
+    </div>
+</div>
+
+<div class="container">
+  <div class="competition">
+      <h2><i class="fas fa-laptop-code"></i> Byte bandits<br>(Code marathon)</h2>
+      <div class="card">
+          <div class="card-inner">
+              <div class="card-front">
+                          <img src="2 (1).jpeg" alt="img of yukthi's brochure">
+              </div>
+              <div class="card-back">
+                          <img src="2 (16).jpeg" alt="img of yukthi's brochure">
+              </div>
+          </div>
+      </div>
+      <p class="coordinator">
+          Student Coordinator:<br>
+          Sreeshya N R [ +91 701 276 2844]<br>
+          Sreetha Manoj [ +91 974 646 5249 ]<br>
+          <br>
+          Staff Coordinator:<br>
+          Praseetha E [ +91 944 658 7993 ]</p>
+  </div>
+</div>
+
+    </main>
+    <button class="scroll-top" id="scrollTopBtn">↑</button>
+
+    <script>
+
+      // Scroll-to-top functionality
+      const scrollTopBtn = document.getElementById('scrollTopBtn');
+      window.addEventListener('scroll', () => {
+          if (window.scrollY > 300) {
+              scrollTopBtn.classList.add('visible');
+          } else {
+              scrollTopBtn.classList.remove('visible');
+          }
+      });
+
+      scrollTopBtn.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    </script>
+
+    <footer>
         <p>&copy; 2024 Yukthi Tech Fest. All rights reserved.</p>
-      </footer>
-    
-      <script src="script.js"></script>
+    </footer>
 </body>
 </html>

@@ -6,8 +6,8 @@
 }
 
 body {
-  margin: 0;
-  font-family: 'Lobster', cursive;
+  background-color: #0a070d; /* Deep Purple */
+  color: #FFFFFF; /* White Text */
 }
 
 .video-container {
@@ -225,7 +225,7 @@ h2 {
 }
 
 p {
-  font-size: 1.1rem;
+  font-size: 100%;
   margin: 10px 0;
   color: #ffffff;
 
@@ -253,7 +253,7 @@ p {
 }
 
 .intro p {
-  font-size: 1.1rem;
+  font-size: 145%;
   margin: 10px 0;
   color: #E6E6FA;
   flex: 1; /* Take up available space */
@@ -316,7 +316,7 @@ p {
 .card h3 {
   font-size: 1.5rem;
   margin-bottom: 10px;
-  color: purple;
+  color: #a368fc; 
 }
 
 .card p {
@@ -358,6 +358,11 @@ form input, form textarea {
   margin: 5px 0 15px;
   border: 1px solid #ccc;
   border-radius: 5px;
+}
+
+form input:focus, form textarea:focus {
+  border-color: #a368fc; /* Highlight border on focus */
+  outline: none; /* Remove default outline */
 }
 
 form button {
@@ -418,10 +423,10 @@ form button:hover {
 /* After Movie Section */
 .after-movie {
   border-top: 4px solid #1d132c;
-  padding: 100px;
+  padding: 50px 20px; /* Ensure padding is appropriate */
+  margin-top: 20px; /* Adjust this value to reduce spacing */
   text-align: center;
   background: #0a070d;
-  margin-bottom: 0;
 }
 
 .after-movie h2 {
@@ -517,76 +522,74 @@ form button:hover {
 }
 
 
-/* Heading styling */
-.main h1 {
-  text-align: center; /* Center the heading */
-  margin: 80px 10; /* Add margin for spacing */
-  text-size-adjust: 50%;
+.yukthi-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
 }
-
-/* Flex container for image and paragraph */
-.mainth {
-  display: flex; /* Use flexbox for layout */
-  align-items: center; /* Center items vertically */
-  justify-content: center; /* Center items horizontally */
-  padding: 200px;
-}
-
-.main {
-  display: flex; /* Use flexbox for layout */
-  align-items: center; /* Center items vertically */
-}
-
-.card-container {
-  position: relative;
-  width: 300px; /* Set the width of the card */
-  height: 400px; /* Set the height of the card */
-  perspective: 1000px; /* Adds perspective to the 3D effect */
-  margin-right: 20px; /* Space between card and text */
-}
-
-.flip-card {
+.yukthi-section {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px 0;
   width: 100%;
-  height: 100%;
-  position: relative;
-  transform-style: preserve-3d; /* Enable 3D transformations */
-  transition: transform 0.6s; /* Animation duration */
+  max-width: 1200px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.yukthi-section img {
+  width: 20%;
+  object-fit: cover;
+}
+.yukthi-content {
+  flex: 1;
+  padding: 20px;
+}
+.yukthi-content h2 {
+  margin-bottom: 15px;
+  color: #2d3436;
+  font-size: 24px;
+}
+.yukthi-content p {
+  margin-bottom: 15px;
+  color: #636e72;
+  font-size: 16px;
+}
+.yukthi-content a {
+  text-decoration: none;
+  color: #0984e3;
+  font-weight: bold;
 }
 
-.card-container:hover .flip-card {
-  transform: rotateY(180deg); /* Flip the card on hover */
+.scroll-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #6b0488;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
 }
 
-.flip-card-front, .flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden; /* Hide the back face when flipped */
+.scroll-top.visible {
+  opacity: 1;
+  visibility: visible;
 }
 
-.flip-card-front {
-  background-color: #fff; /* Background color for the front */
-}
-
-.flip-card-back {
-  background-color: #fff; /* Background color for the back */
-  transform: rotateY(180deg); /* Rotate the back face */
-}
-
-.flip-card img {
-  max-width: 100%; /* Responsive image */
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 10px; /* Optional: rounded corners */
-}
-
-.text-section {
-  max-width: 400px; /* Set a max width for the text section */
-}
-
-.text-section h2 {
-  margin: 0 0 10px; /* Spacing for heading */
-}
-
-.text-section p {
-  margin: 0; /* Remove default margin */
+.scroll-top:hover {
+  background: #800080;
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Slightly increase shadow on hover */
 }
