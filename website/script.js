@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    console.log("Welcome to Yukthi!");
+    console.log("Yukthi!");
   });
   
       

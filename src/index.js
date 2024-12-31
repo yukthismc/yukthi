@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Update the heading text
     const heading = document.querySelector('h1');
     if (heading) {
-        heading.textContent = 'Welcome to Yukthi!';
+        heading.textContent = 'Yukthi';
     }
 
     // Smooth scrolling for navigation links

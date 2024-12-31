@@ -4,9 +4,608 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>YUKTHI SMC</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+  <style>
+  /* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0a070d; /* Deep Purple */
+  color: #FFFFFF; /* White Text */
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+
+/* Body Styling */
+body, h1, h2, p {
+  margin: 0;
+  padding: 0;
+  align-items:normal;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.6;
+  background-color: #0a070d; /* Deep Purple */
+  color: #FFFFFF; /* White Text */
+
+}
+
+/* Header Section */
+.header-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the video covers the header without distortion */
+  z-index: -1; /* Places it behind the overlay */
+}
+
+header {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Ensures it takes the full viewport height */
+  overflow: hidden; /* Ensures no parts of the video overflow */
+}
+
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Lobster', cursive; /* Replace 'Lobster' with your chosen font */
+  font-size: 4rem; /* Adjust size to fit your design */
+  color: #fff; /* White text color */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Adds a subtle shadow for readability */
+  text-align: center;
+  z-index: 10;
+}
+
+.overlay h1 {
+  font-family: 'Orbitron', sans-serif; /* Futuristic, digital font */
+  font-size: 6rem; /* Large for emphasis */
+  color: #64016d; /* Light cyan color for a digital/tech feel */
+  text-transform: uppercase;
+  letter-spacing: 12px; /* Spacing to give it a mechanical vibe */
+  position: relative;
+  text-align: center;
+  z-index: 2;
+  text-shadow: 0 0 8px #6c0161b3, 0 0 15px #000000cc ;
+  animation: scan-line 2s infinite linear; /* Adding a techy scan line effect */
+}
+
+/* Digital "Scan Line" animation effect */
+/* @keyframes scan-line {
+  0% {
+    background: linear-gradient(90deg, #00ffccb3 25%, transparent 25%, transparent 50%, rgba(0, 255, 204, 0.7) 50%, rgba(0, 255, 204, 0.7) 75%, transparent 75%, transparent);
+    background-size: 200% 100%;
+    color: #00ffcc;
+  }
+  100% {
+    background-position: 100% 0;
+    color: #00ffcc;
+  }
+} */
+
+/* Adding a border that mimics a circuit or frame */
+/* .overlay h1::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%;
+  height: 120%;
+  background: rgba(28, 1, 28, 0.3);
+  border-radius: 10px;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  box-shadow: 0 0 15px #f200ffb3;
+  animation: borderScan 2s infinite linear;
+} */
+
+/* Circuit-like border effect
+@keyframes borderScan {
+  0% {
+    box-shadow: 0 0 5px #00ffccb3, 0 0 15px #00ffcc80;
+  }
+  50% {
+    box-shadow: 0 0 20px #00ffcce6, 0 0 40px #00ffcc99;
+  }
+  100% {
+    box-shadow: 0 0 5px #00ffccb3, 0 0 15px #00ffcc80;
+  }
+} */
+
+/* Additional Digital Flicker Effect */
+.overlay h1:hover {
+  animation: flickerEffect 1.5s infinite alternate;
+}
+
+/* Flicker animation to make it feel more digital */
+@keyframes flickerEffect {
+  0% {
+    opacity: 1;
+    text-shadow: 0 0 15px #6f0a6380, 0 0 25px #69036b99;
+  }
+  50% {
+    opacity: 0.7;
+    text-shadow: 0 0 10px #f200ffb3, 0 0 20px 6f0a6380(0, 255, 204, 0.7);
+  }
+  100% {
+    opacity: 1;
+    text-shadow: 0 0 15px rgba(68, 10, 59, 0.9), 0 0 25px rgb(64, 5, 75);
+  }
+}
+
+
+
+.overlay p {
+  background: linear-gradient(90deg, #ff6f61, #ffcc00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Navigation Bar */
+/* Navbar Styling */
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(14, 13, 13, 0.6);
+  z-index: 20;
+  padding: 10px 0; /* Adjust navbar padding to give space for the logo */
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  align-items: center; /* Vertically center the logo and menu items */
+}
+
+.navbar ul li {
+  margin: 0 20px;
+}
+
+/* Logo Styling */
+.navbar .logo {
+  margin-right: auto; /* Pushes the logo to the left */
+}
+
+.navbar .logo-img {
+  height: 50px; /* Adjust logo size */
+  width: auto;
+  display: block;
+}
+
+/* Navigation Links Styling */
+.navbar ul li a {
+  text-decoration: none;
+  color: #6b0488;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  display: inline-block;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.navbar ul li a:hover {
+  background-color: #222222;
+  color: #6b0488;
+  transform: scale(1.1);
+}
+
+
+/* Section Styling */
+section {
+  padding: 50px 20px;
+  text-align: center;
+  
+}
+
+.events {
+  /* border-top: 4px solid #1d132c;  */
+  background-color: #0a070d ;
+  color: #E6E6FA; 
+}
+
+h2 {
+  font-size: 350%;
+  margin-bottom: 20px;
+  color: #a368fc;
+}
+
+p {
+  font-size: 100%;
+  margin: 10px 0;
+  color: #ffffff;
+
+}
+
+.intro  {
+  border-top: 4px solid #a368fc;
+  background-color: #0a070d ;
+  color: #E6E6FA; 
+  display: flex;
+  justify-content: space-between; /* Space between items */
+  align-items: center; /* Vertically center the items */
+  padding: 100px;
+  height: 500px; /* Adjust height as needed */
+}
+
+
+.intro h2 {
+  font-size: 500%;
+  margin-bottom: 20px;
+  color: #ffffff;
+  flex: 1; /* Take up available space */
+  text-align: left; /* Align heading to the right */
+  padding: 10px;
+}
+
+.intro p {
+  font-size: 110%;
+  margin: 10px 0;
+  color: #E6E6FA;
+  flex: 1; /* Take up available space */
+  padding: 10px;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  width: 300px; /* Set a fixed width for the card */
+  height: 200px; /* Set a fixed height for the card */
+  perspective: 1000px; /* Add perspective to the card */
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s; /* Smooth transition for rotation */
+  transform-style: preserve-3d; /* Preserve 3D space */
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg); /* Rotate the card on hover */
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Hide the back face when not visible */
+  border-radius: 10px; /* Match the card's border radius */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-front {
+  background: #180138;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.card-back {
+  background: #24023e; /* Different background for the back */
+  transform: rotateY(180deg); /* Flip the back face */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #a368fc; 
+}
+
+.card p {
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+/* Footer Styles */
+footer {
+  border-top: 4px solid #a368fc;
+  background: #0a070d;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+footer h2 {
+  margin-bottom: 15px;
+  font-size: 200%;
+  color: #800080;
+}
+
+form {
+  
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+form label {
+  font-weight: bold;
+  color: silver;
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form input:focus, form textarea:focus {
+  border-color: #a368fc; /* Highlight border on focus */
+  outline: none; /* Remove default outline */
+}
+
+form button {
+  padding: 10px 20px;
+  background-color: #800080;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: silver;
+  color: black;
+}
+
+/* Social Media Styles */
+.social-media a {
+  color: silver;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.social-media a:hover {
+  color: purple;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .overlay {
+    font-size: 2rem; /* Adjust font size for smaller screens */
+  }
+
+  footer h2 {
+    font-size: 20px;
+  }
+
+  footer p {
+    border-top: 4px solid #1d132c;
+    font-size: 1.1rem;
+    margin: 10px 0;
+    color: #E6E6FA;
+  
+  }
+
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 90%;
+    margin-bottom: 20px;
+  }
+}
+
+/* After Movie Section */
+.after-movie {
+  border-top: 4px solid #1d132c;
+  padding: 50px 20px; /* Ensure padding is appropriate */
+  margin-top: 20px; /* Adjust this value to reduce spacing */
+  text-align: center;
+  background: #0a070d;
+}
+
+.after-movie h2 {
+  padding: 100px;
+  font-size: 350%;
+  color: #a368fc;
+  margin-bottom: 30px;
+}
+
+.video-container iframe {
+  width: 100%;
+  max-width: 800px;
+  height: 500px;
+  border: 4px solid #a368fc;
+  border-radius: 5px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  margin-bottom: 0;
+}
+
+
+/* Sponsors Section */
+.sponsors {
+  padding: 50px 20px;
+  text-align: center;
+  background: #0a070d;
+  /* border-top: 4px solid #1d132c; */
+}
+
+.sponsors h2 {
+  font-size: 350%;
+  color: #a368fc;
+  margin-bottom: 30px;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.sponsor-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.sponsor-logos img {
+  width: 150px;
+  height: auto;
+  object-fit: contain;
+  border: 2px solid #a368fc;
+  padding: 10px;
+  background: #2a2a3d;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.sponsor-logos img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(163, 104, 252, 0.8);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 0; /* No space between sections */
+}
+
+.event, .after-movie {
+  padding: 0;
+  margin: 0;
+}
+
+/* Heading styling */
+.event h1 {
+  text-align: center; /* Center the heading */
+  margin: 80px 10; /* Add margin for spacing */
+  text-size-adjust: 50%;
+}
+
+/* Flex container for image and paragraph */
+.eventh {
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+  padding: 200px;
+}
+
+.text-section {
+  margin-right: 100px; /* Space between text and image */
+}
+
+.image-section img {
+  max-width: 50%; /* Responsive image */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Optional: rounded corners */
+}
+
+
+.yukthi-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+.yukthi-section {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px 0;
+  width: 100%;
+  max-width: 1200px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.yukthi-section img {
+  width: 20%;
+  object-fit: cover;
+}
+.yukthi-content {
+  flex: 1;
+  padding: 20px;
+}
+.yukthi-content h2 {
+  margin-bottom: 15px;
+  color: #2d3436;
+  font-size: 24px;
+}
+.yukthi-content p {
+  margin-bottom: 15px;
+  color: #636e72;
+  font-size: 16px;
+}
+.yukthi-content a {
+  text-decoration: none;
+  color: #0984e3;
+  font-weight: bold;
+}
+
+.scroll-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #6b0488;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.scroll-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-top:hover {
+  background: #800080;
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Slightly increase shadow on hover */
+}
+
+</style>
 </head>
+
 <body>
   <!-- Header Section with Video Background -->
   <header>
@@ -50,9 +649,10 @@
 <section class="after-movie">
   <h2>After Movie</h2>
   <div class="video-container">
-    <iframe src="https://www.youtube.com/embed/iKNjJ9oyNVU" frameborder="0" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/iKNjJ9oyNVU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   </div>
 </section>
+
 
   <!-- Events Section -->
   <section class="events">
@@ -225,8 +825,8 @@
     <!-- Footer Text -->
     <p>&copy; 2024 Yukthi Tech Fest. All rights reserved.</p>
   </footer>
-  <!-- <script src="index.js"></script>
-  <script src="script.js"></script> -->
+  <script src="index.js"></script>
+  <script src="script.js"></script>
 
   <!-- Assuming you have a dist folder and Webpack output is in there -->
 <script src="/main.js"></script>
