@@ -295,7 +295,7 @@ p {
 }
 
 .card-front {
-  background: rgb(24, 1, 56);
+  background: #180138;
   display: flex;
   flex-direction: column;
   align-items: center;
