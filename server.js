@@ -1,19 +1,19 @@
 const express = require('express');
-const path = require('path');
+const path = require('path');  // This module will help in resolving the path
+
 const app = express();
 
-// Serve static files from the 'dist' folder
-app.use(express.static(path.join(__dirname, 'dist')));
+// Serve static files from the 'website' folder
+app.use(express.static(path.join(__dirname, 'website')));
 
-// If you're using another folder for CSS, like 'website/css', you can explicitly serve that as well:
-app.use('/css', express.static(path.join(__dirname, 'website', 'css')));
-app.use('/images', express.static(path.join(__dirname, 'website')));
+app.use(express.static(path.join(__dirname, 'public')));
 
-
-// Serve the index.html file
+// Default route
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'website', 'index.html'));
+    res.sendFile(path.join(__dirname, 'website', 'index.html'));
 });
 
-const PORT = 3000;
-app.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}`));
+// Start server
+app.listen(3000, () => {
+    console.log('Server is running at http://localhost:3000');
+});
