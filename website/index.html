@@ -54,13 +54,11 @@ body {
   z-index: -1; /* Places it behind the overlay */
 }
 
-/* Adjust header for logo positioning (optional) */
 header {
-  display: flex;
-  align-items: center; /* Vertically center the logo */
-  justify-content: center; /* Optionally center the logo horizontally */
-  height: 500%;         /* Set a fixed height for the header */
-  background-color: #f0f0f0; /* Optional background color */
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Ensures it takes the full viewport height */
+  overflow: hidden; /* Ensures no parts of the video overflow */
 }
 
 .overlay {
@@ -160,58 +158,60 @@ header {
   -webkit-text-fill-color: transparent;
 }
 
+/* Navigation Bar */
+/* Navbar Styling */
 .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: fit-content;
-            background: rgba(14, 13, 13, 0.8);
-            z-index: 20;
-            padding: 5px 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-        }
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(14, 13, 13, 0.6);
+  z-index: 20;
+  padding: 10px 0; /* Adjust navbar padding to give space for the logo */
+}
 
-        .navbar ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            padding: 0;
-            margin: 0;
-            align-items: center;
-        }
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  align-items: center; /* Vertically center the logo and menu items */
+}
 
-        .navbar ul li {
-            margin: 0 20px;
-        }
+.navbar ul li {
+  margin: 0 20px;
+}
 
-        .navbar .logo {
-            margin-right: auto;
-        }
+/* Logo Styling */
+.navbar .logo {
+  margin-right: auto; /* Pushes the logo to the left */
+}
 
-        .navbar .logo-img {
-            height: 50px;
-            width: auto;
-            display: block;
-        }
+.navbar .logo-img {
+  height: 50px; /* Adjust logo size */
+  width: auto;
+  display: block;
+}
 
-        .navbar ul li a {
-            text-decoration: none;
-            color: #6b0488;
-            font-size: 1.2rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            padding: 10px 20px;
-            display: inline-block;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-        }
+/* Navigation Links Styling */
+.navbar ul li a {
+  text-decoration: none;
+  color: #6b0488;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  display: inline-block;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
 
-        .navbar ul li a:hover {
-            background-color: #222222;
-            color: #6b0488;
-            transform: scale(1.1);
-        }
+.navbar ul li a:hover {
+  background-color: #222222;
+  color: #6b0488;
+  transform: scale(1.1);
+}
 
         .logo {
   max-width: 150px;  /* Adjust size */
