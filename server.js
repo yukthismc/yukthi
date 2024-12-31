@@ -2,8 +2,10 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
-app.use(express.static(path.join(__dirname, 'website'))); // Serve static files
+// Serve static files from the 'dist' folder where Webpack bundles the JS
+app.use(express.static(path.join(__dirname, 'dist')));
 
+// Serve the index.html file from the 'website' folder
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'website', 'index.html'));
 });
