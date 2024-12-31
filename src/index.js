@@ -1,7 +1,9 @@
-// index.js
 document.addEventListener('DOMContentLoaded', () => {
+    // Update the heading text
     const heading = document.querySelector('h1');
-    heading.textContent = 'Welcome to Yukthi!';
+    if (heading) {
+        heading.textContent = 'Welcome to Yukthi!';
+    }
 
     // Smooth scrolling for navigation links
     const links = document.querySelectorAll('.navbar a');
@@ -10,7 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const targetId = link.getAttribute('href');
             const targetElement = document.querySelector(targetId);
-            targetElement.scrollIntoView({ behavior: 'smooth' });
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
         });
     });
 });
