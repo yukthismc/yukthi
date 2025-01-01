@@ -246,6 +246,37 @@
             transform: scale(1.1);
         }
 
+         /* Style the download button */
+  .download-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #371137; /* Blue color */
+    color: white;
+    text-decoration: none;
+    border-radius: 8px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Slight shadow */
+  }
+
+  /* Hover effect */
+  .download-btn:hover {
+    background-color: #2f0230; /* Darker blue */
+    transform: translateY(-2px); /* Slightly lift the button */
+  }
+
+  /* Focus effect for accessibility */
+  .download-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px #00000099; /* Focus border */
+  }
+
+  /* Active effect when button is clicked */
+  .download-btn:active {
+    background-color: #9d02ab; /* Even darker blue when pressed */
+    transform: translateY(0); /* Remove the lift effect */
+  }
 
     </style>
 </head>
@@ -491,7 +522,7 @@
 </div>
 
     </main>
-    <a href="images/YUKTHI 2.0.pdf" download="YUKTHI 2.0.pdf">Download PDF</a>
+    <center><a href="images/YUKTHI 2.0.pdf" download="YUKTHI 2.0.pdf"  class="download-btn">Download PDF</a></center>
 
 
     <button class="scroll-top" id="scrollTopBtn">↑</button>
