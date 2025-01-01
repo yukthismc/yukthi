@@ -4,7 +4,7 @@ const path = require('path');  // This module will help in resolving the path
 const app = express();
 
 // Serve the Google verification file
-app.get("/google123456789.html", (req, res) => {
+app.get("/googleb7dbc6e4ae341232.html", (req, res) => {
     res.sendFile(path.join(__dirname, "googleb7dbc6e4ae341232.html"));
   });
 
@@ -22,3 +22,7 @@ app.get('/', (req, res) => {
 app.listen(3000, () => {
     console.log('Server is running at http://localhost:3000');
 });
+
+app.listen(3000, () => {
+    console.log("Server is running on port 3000");
+  });
