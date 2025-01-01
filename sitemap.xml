@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://yukthismc.onrender.com/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://yukthismc.onrender.com/index.html</loc>
+    <lastmod>2025-01-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+    <url>
+    <loc>https://yukthismc.onrender.com/event.html</loc>
+    <lastmod>2025-01-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+    <url>
+    <loc>https://docs.google.com/forms/d/e/1FAIpQLScLVDlz3S-K5iP6q8ylnvKwgND5Hw8HFjaAtOsmM56rov1nsw/closedform</loc>
+    <lastmod>2025-01-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+</urlset>
