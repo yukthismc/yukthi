@@ -3,6 +3,11 @@ const path = require('path');  // This module will help in resolving the path
 
 const app = express();
 
+// Serve the Google verification file
+app.get("/google123456789.html", (req, res) => {
+    res.sendFile(path.join(__dirname, "googleb7dbc6e4ae341232.html"));
+  });
+
 // Serve static files from the 'website' folder
 app.use(express.static(path.join(__dirname, 'website')));
 
