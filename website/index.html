@@ -189,7 +189,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(14, 13, 13, 0.6);
+  background: #0e0d0d99;
   z-index: 20;
   padding: 5px 0; /* Adjust navbar padding to give space for the logo */
 }
@@ -644,7 +644,102 @@ form button:hover {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Slightly increase shadow on hover */
 }
 
+.register-button {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #ffffff; 
+            background-color: #0e0d0d99; 
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .register-button::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgb(53, 24, 53);
+            border-radius: 50%;
+            animation: shine 2s infinite;
+            transform: translate(-50%, -50%) rotate(30deg);
+        }
+
+        @keyframes shine {
+            0% {
+                transform: translate(-200%, -200%) rotate(30deg);
+            }
+            100% {
+                transform: translate(200%, 200%) rotate(30deg);
+            }
+        }
+
+        .register-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #ffffff; /* White text */
+            background-color: #490c47; /* Green */
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            animation: pulse 1.5s infinite,glow 1.5s infinite alternate; /* Glowing animation */ /* Pulsing animation */
+            transition: background-color 0.3s;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1); /* Grow */
+            }
+            100% {
+                transform: scale(1); /* Shrink back */
+            }
+        }
+
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 20px rgb(0, 0, 0);
+            }
+            100% {
+                box-shadow: 0 0 40px rgb(84, 4, 108);
+            }
+        }
+
+        .register-btn:hover {
+            background-color: #301531; /* Darker green on hover */
+        }
 </style>
+
+<script>
+  // Function to show alerts based on screen orientation and size
+  function checkOrientation() {
+      if (window.innerWidth > 768) {
+          alert("You are in Desktop Site Mode. For a better experience, consider switching to Mobile Mode.");
+      } else {
+          if (window.matchMedia("(orientation: portrait)").matches) {
+              alert("Please rotate your device to landscape mode for a better experience.");
+          }
+      }
+  }
+
+  // Check orientation on load and on resize
+  window.onload = checkOrientation;
+  window.addEventListener('resize', checkOrientation);
+</script>
+
 </head>
 
 <body>
@@ -673,7 +768,7 @@ form button:hover {
       <!-- Navigation Links -->
       <li><a href="index.html">Home</a></li>
       <li><a href="event.html">Events</a></li>
-      <li><a href="https://forms.gle/Dp3X1TQ6AgUd7F8MA">Register</a></li>
+      <li><a href="https://forms.gle/Dp3X1TQ6AgUd7F8MA" class="register-button">Register</a></li>
     </ul>
   </nav>
 
@@ -750,7 +845,7 @@ form button:hover {
             <h3>Treasure Hunt</h3>
           </div>
           <div class="card-back">
-            <p>Work in teams to solve clues and find treasures!</p>
+            <p>Be the solver of the crazy challenges and puzzles which awaits you in this Tech-verse!</p>
           </div>
         </div>
       </div>
@@ -797,6 +892,8 @@ form button:hover {
       </div>
     </div>
   </section>
+
+  <center><a href="https://forms.gle/Dp3X1TQ6AgUd7F8MA" class="register-btn" >Register NOW</a></center>
 
   <!-- Sponsors Section -->
 <section class="sponsors">
