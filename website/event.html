@@ -130,46 +130,93 @@
             font-family:Verdana, Geneva, Tahoma, sans-serif;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #180138;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-            border-radius: 8px;
-            position: relative;
-            overflow: hidden;
-            animation: fadeIn 0.5s ease; /* Fade-in animation */
-        }
+ /* Base styles for larger screens */
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #180138;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 0.5s ease;
+}
 
-        .competition {
-            margin-bottom: 20px;
-            text-align: left;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-        }
+.competition {
+    margin-bottom: 20px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
 
-        .competition h2 {
-            color: #ffffff;
-            margin-bottom: 10px;
-            font-size: 2rem;
-            text-align: center;
-        }
+.competition h2 {
+    color: #ffffff;
+    margin-bottom: 10px;
+    font-size: 2rem;
+    text-align: center;
+}
 
-        .competition p {
-            color: #ffffff;
-            margin-bottom: 5px;
-            font-size: 1.2rem;
-            text-align: center;
-            padding: 5rem;
-        }
+.competition p {
+    color: #ffffff;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 5rem;
+}
 
-        .coordinator {
-            margin-top: 10px;
- font-weight: bold;
-            color: #cfb7cf;
-        }
+.coordinator {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #cfb7cf;
+}
+
+/* Media Query for tablets and mobile (max-width 768px) */
+@media (max-width: 768px) {
+    /* Adjust the container padding and margins for smaller screens */
+    .container {
+        padding: 15px;
+        margin: 10px;
+    }
+
+    .competition {
+        flex-direction: column; /* Stacks the items vertically */
+        align-items: center; /* Centers the content */
+    }
+
+    .competition h2 {
+        font-size: 1.5rem; /* Smaller font size */
+    }
+
+    .competition p {
+        font-size: 1rem; /* Smaller font size */
+        padding: 2rem; /* Reduced padding */
+    }
+
+    /* Ensure content does not overflow in smaller screens */
+    .coordinator {
+        font-size: 1rem; /* Adjust coordinator text size */
+    }
+}
+
+/* Media Query for very small screens (max-width 480px) */
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+        margin: 5px;
+    }
+
+    .competition h2 {
+        font-size: 1.2rem; /* Further reduce header size */
+    }
+
+    .competition p {
+        font-size: 0.9rem; /* Further reduce paragraph font size */
+    }
+}
+
+
 
         footer {
             border-top: 4px solid #a368fc;
@@ -290,12 +337,12 @@
          /* Style the download button */
   .download-btn {
     display: inline-block;
-    padding: 20px 20px;
+    padding: 30px 50px;
     background-color: #371137; /* Blue color */
     color: white;
     text-decoration: none;
     border-radius: 8px; /* Rounded corners */
-    font-size: 16px; /* Font size */
+    font-size: 20px; /* Font size */
     font-weight: bold;
     transition: background-color 0.3s ease, transform 0.2s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Slight shadow */
