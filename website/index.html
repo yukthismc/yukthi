@@ -725,75 +725,23 @@ form button:hover {
             background-color: #301531; /* Darker green on hover */
         }
 
-        .modal {
-            display: none; /* Hidden by default */
-            position: fixed; /* Stay in place */
-            z-index: 1000; /* Sit on top */
-            left: 0;
-            top: 0;
-            width: 100%; /* Full width */
-            height: 100%; /* Full height */
-            overflow: auto; /* Enable scroll if needed */
-            background-color: rgba(0, 0, 0, 0.7); /* Black w/ opacity */
-        }
-
-        .modal-content {
-            background-color: #fff;
-            margin: 15% auto; /* 15% from the top and centered */
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%; /* Could be more or less, depending on screen size */
-            text-align: center;
-        }
-
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: red;
-            text-decoration: none;
-            cursor: pointer;
-        }
 </style>
 
 <script>
-// Function to show the modal
-function showModal(message) {
-            const modal = document.getElementById("myModal");
-            modal.querySelector(".modal-content p").innerText = message;
-            modal.style.display = "block";
-        }
+  document.addEventListener("DOMContentLoaded", function () {
+      // Check if the user is on a mobile device
+      const isMobile = /Mobi|Android|iPhone|iPad|iPod/.test(navigator.userAgent);
 
-        // Function to close the modal
-        function closeModal() {
-            document.getElementById("myModal").style.display = "none";
-        }
+      // Detect if the site is in mobile mode (not desktop mode)
+      const isNotDesktopModeOnMobile = isMobile && window.innerWidth <= 800;
 
-        // Check for mobile device
-        function isMobile() {
-            return /Mobi|Android/i.test(navigator.userAgent);
-        }
-
-        // Check for desktop mode
-        function checkDesktopMode() {
-            if (isMobile() && window.innerWidth > 768) {
-                showModal("You are currently in desktop mode on your mobile device.");
-            }
-        }
-
-        // Check for desktop mode on load and on resize
-        window.onload = function() {
-            checkDesktopMode();
-        };
-        window.addEventListener('resize', checkDesktopMode);
+      // Display the alert if the conditions are met
+      if (isNotDesktopModeOnMobile && !sessionStorage.getItem("mobileModeAlertShown")) {
+          alert("Please switch to Desktop Mode in Chrome on your mobile for the best experience.");
+          sessionStorage.setItem("mobileModeAlertShown", "true");
+      }
+  });
 </script>
-</script>
-
 
 </head>
 
