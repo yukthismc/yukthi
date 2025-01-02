@@ -276,7 +276,7 @@ h2 {
 }
 
 p {
-  font-size: 500%;
+  font-size: 100%;
   margin: 10px 0;
   color: #ffffff;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
@@ -728,22 +728,21 @@ form button:hover {
         .modal {
             display: none; /* Hidden by default */
             position: fixed; /* Stay in place */
-            z-index: 1; /* Sit on top */
+            z-index: 1000; /* Sit on top */
             left: 0;
             top: 0;
             width: 100%; /* Full width */
             height: 100%; /* Full height */
             overflow: auto; /* Enable scroll if needed */
-            background-color: rgb(0, 0, 0); /* Black w/ opacity */
+            background-color: rgba(0, 0, 0, 0.7); /* Black w/ opacity */
         }
 
         .modal-content {
-            background-color: #fefefe;
+            background-color: #fff;
             margin: 15% auto; /* 15% from the top and centered */
             padding: 20px;
             border: 1px solid #888;
             width: 80%; /* Could be more or less, depending on screen size */
-            color: #000; /* Black text */
             text-align: center;
         }
 
@@ -763,37 +762,35 @@ form button:hover {
 </style>
 
 <script>
-
-let desktopModeAlertShown = false; // Flag to track if the alert has been shown
-
 // Function to show the modal
-function showModal() {
-    document.getElementById("myModal").style.display = "block";
-}
+function showModal(message) {
+            const modal = document.getElementById("myModal");
+            modal.querySelector(".modal-content p").innerText = message;
+            modal.style.display = "block";
+        }
 
-// Function to close the modal
-function closeModal() {
-    document.getElementById("myModal").style.display = "none";
-}
+        // Function to close the modal
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
 
-// Check for mobile device
-function isMobile() {
-    return /Mobi|Android/i.test(navigator.userAgent);
-}
+        // Check for mobile device
+        function isMobile() {
+            return /Mobi|Android/i.test(navigator.userAgent);
+        }
 
-// Check for desktop mode
-function checkDesktopMode() {
-    if (isMobile() && window.innerWidth > 768 && !desktopModeAlertShown) {
-        desktopModeAlertShown = true; // Set the flag to true
-        showModal(); // Show the modal
-    }
-}
+        // Check for desktop mode
+        function checkDesktopMode() {
+            if (isMobile() && window.innerWidth > 768) {
+                showModal("You are currently in desktop mode on your mobile device.");
+            }
+        }
 
-// Check for desktop mode on load and on resize
-window.onload = function() {
-    checkDesktopMode();
-};
-window.addEventListener('resize', checkDesktopMode);
+        // Check for desktop mode on load and on resize
+        window.onload = function() {
+            checkDesktopMode();
+        };
+        window.addEventListener('resize', checkDesktopMode);
 </script>
 </script>
 
@@ -1031,7 +1028,7 @@ window.addEventListener('resize', checkDesktopMode);
    
 
     <!-- Footer Text -->
-    <p>&copy; 2024 Yukthi Tech Fest. All rights reserved.</p>
+    <p>&copy; 2024 Yukthi Tech Fest by the Dept of Computer Science and Application. All rights reserved.</p>
   </footer>
   <script src="index.js"></script>
   <script src="script.js"></script>
