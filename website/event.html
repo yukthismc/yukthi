@@ -278,6 +278,44 @@
     transform: translateY(0); /* Remove the lift effect */
   }
 
+  .register-button {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #ffffff; 
+            background-color: #0e0d0d99; 
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .register-button::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgb(53, 24, 53);
+            border-radius: 50%;
+            animation: shine 2s infinite;
+            transform: translate(-50%, -50%) rotate(30deg);
+        }
+
+        @keyframes shine {
+            0% {
+                transform: translate(-200%, -200%) rotate(30deg);
+            }
+            100% {
+                transform: translate(200%, 200%) rotate(30deg);
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -290,7 +328,7 @@
       </li>
       <li><a href="index.html">Home</a></li>
       <li><a href="event.html">Events</a></li>
-      <li><a href="https://forms.gle/Dp3X1TQ6AgUd7F8MA">Register</a></li>
+      <li><a href="https://forms.gle/Dp3X1TQ6AgUd7F8MA" class="register-button">Register</a></li>
     </ul>
   </nav>
 
