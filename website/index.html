@@ -101,13 +101,13 @@ header {
 .overlay h1 {
   font-family: 'Orbitron', sans-serif; /* Futuristic, digital font */
   font-size: 7rem; /* Large for emphasis */
-  color: #64016d; /* Light cyan color for a digital/tech feel */
+  color: #b251d8; /* Light cyan color for a digital/tech feel */
   text-transform: uppercase;
   letter-spacing: 12px; /* Spacing to give it a mechanical vibe */
   position: relative;
   text-align: center;
   z-index: 2;
-  text-shadow: 0 0 8px #6c0161b3, 0 0 15px #000000cc ;
+  text-shadow: 0 0 8px #3c1d39b3, 0 0 15px #620864cc ;
   animation: scan-line 2s infinite linear; /* Adding a techy scan line effect */
 }
 
@@ -177,7 +177,7 @@ header {
 
 
 .overlay p {
-  color: #8300a3;
+  color: #ffffff;
   font-size: 2rem;
   font-family:'Courier New', Courier, monospace;
 }
@@ -235,7 +235,7 @@ header {
 /* Navigation Links Styling */
 .navbar ul li a {
   text-decoration: none;
-  color: #6b0488;
+  color: #9e08c8;
   font-size: 1.2rem;
   font-weight: bold;
   text-transform: uppercase;
@@ -475,33 +475,35 @@ form button:hover {
 
 /* After Movie Section */
 .after-movie {
-  border-top: 4px solid #1d132c;
-  padding: 50px 20px; /* Ensure padding is appropriate */
-  margin-top: 20px; /* Adjust this value to reduce spacing */
-  text-align: center;
-  background: #0a070d;
+    border-top: 4px solid #1d132c;
+    padding: 10px 10px; /* Reduced padding */
+    margin-top: 10px; /* Reduced margin to shrink spacing */
+    text-align: center;
+    background: #0a070d;
+    margin-bottom: 0; /* Reduce the bottom margin */
 }
 
 .after-movie h2 {
-  padding: 100px;
-  font-size: 350%;
-  color: #a368fc;
-  margin-bottom: 30px;
+    padding: 20px; /* Reduced padding around the heading */
+    font-size: 350%;
+    color: #a368fc;
+    margin-bottom: 5px; /* Reduced bottom margin */
 }
 
 .video-container iframe {
-  width: 100%;
-  max-width: 800px;
-  height: 500px;
-  border: 4px solid #a368fc;
-  border-radius: 5px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-  margin-bottom: 0;
+    width: 100%;
+    max-width: 800px;
+    height: 500px;
+    border: 4px solid #a368fc;
+    border-radius: 5px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    margin-bottom: 0;
 }
 
 
 /* Sponsors Section */
 .sponsors {
+  margin-top: 5%;
   padding: 50px 20px;
   text-align: center;
   background: #0a070d;
@@ -547,6 +549,10 @@ form button:hover {
 .event, .after-movie {
   padding: 0;
   margin: 0;
+}
+
+.event{
+  margin-top: 0%;
 }
 
 /* Heading styling */
@@ -687,7 +693,7 @@ form button:hover {
 
         .register-btn {
             display: inline-block;
-            padding: 15px 30px;
+            padding: 50px 20px;
             font-size: 20px;
             font-weight: bold;
             color: #ffffff; /* White text */
@@ -698,6 +704,7 @@ form button:hover {
             cursor: pointer;
             animation: pulse 1.5s infinite,glow 1.5s infinite alternate; /* Glowing animation */ /* Pulsing animation */
             transition: background-color 0.3s;
+            margin-top: 5%;
         }
 
         @keyframes pulse {
@@ -749,7 +756,7 @@ form button:hover {
   <!-- Header Section with Video Background -->
   <header>
     <video autoplay loop muted playsinline class="header-video">
-      <source src="https://videos.pexels.com/video-files/6153734/6153734-uhd_2732_1440_25fps.mp4" type="video/mp4">
+      <source src="https://videos.pexels.com/video-files/2759477/2759477-uhd_2560_1440_30fps.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
     <div class="overlay">
