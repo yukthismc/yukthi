@@ -83,6 +83,7 @@ header {
   width: 100%;
   height: 100vh; /* Ensures it takes the full viewport height */
   overflow: hidden; /* Ensures no parts of the video overflow */
+  border-bottom: 4px solid #a368fc;
 }
 
 .overlay {
@@ -284,7 +285,7 @@ p {
 }
 
 .intro  {
-  border-top: 4px solid #a368fc;
+  /* border-top: 4px solid #a368fc; */
   background-color: #0a070d ;
   color: #f4e6fa; 
   display: flex;
@@ -299,7 +300,7 @@ p {
 .intro h2 {
   font-size: 500%;
   margin-bottom: 20px;
-  color: #6a296d;
+  color: #944dff;
   flex: 1; /* Take up available space */
   text-align: left; /* Align heading to the right */
   padding: 10px;
@@ -510,24 +511,41 @@ form button:hover {
   /* border-top: 4px solid #1d132c; */
 }
 
-.sponsors h2 {
+.sponsor h2 {
   font-size: 350%;
   color: #a368fc;
   margin-bottom: 30px;
   text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-.sponsor-logos {
+.sp {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+  flex-direction: column;
+  align-items:center;
 }
 
-.sponsor-logos img {
-  width: 150px;
+.row {
+  display: flex;
+  align-items:center;
+}
+
+.left, .right {
+  display: flex;
+  flex-direction:column;
+}
+
+
+.sponsor-logos1 {
+  display:flex;
+  flex-wrap: wrap;
+  justify-content:left;
+  gap: 50px;
+}
+
+.sponsor-logos1 img {
+  width: 600px;
   height: auto;
-  object-fit: contain;
+  object-fit:fill;
   border: 2px solid #a368fc;
   padding: 10px;
   background: #2a2a3d;
@@ -535,7 +553,87 @@ form button:hover {
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.sponsor-logos img:hover {
+.sponsor-logos1 img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(163, 104, 252, 0.8);
+}
+
+.sponsor-logos2 {
+  display:flex;
+  flex-wrap: wrap;
+  justify-content:right;
+  gap: 50px;
+}
+
+.sponsor-logos2 img {
+  width:auto;
+  max-height: auto;
+  object-fit:cover;
+  border: 2px solid #a368fc;
+  padding: 10px;
+  background: #2a2a3d;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s; 
+  margin-left: 50px;
+  
+}
+
+.sponsor-logos2 img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(163, 104, 252, 0.8);
+}
+
+.sponsor-logos3 {
+  display:flex;
+  flex-wrap: wrap;
+  justify-content:right;
+  gap: 50px;
+}
+
+.sponsor-logos3 img {
+  width: 200px;
+  height: 150px;
+  max-height: 150px; /* Adjust size */
+  margin-bottom: 10px; /* Space between images */
+  object-fit:fill;
+  border: 2px solid #a368fc;
+  padding: 10px;
+  background: #2a2a3d;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  margin-left: 50px;
+  margin-top: 10px;
+  
+}
+
+.sponsor-logos3 img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(163, 104, 252, 0.8);
+}
+
+.sponsor-logos4 {
+  display:flex;
+  flex-wrap: wrap;
+  justify-content:right;
+  gap: 50px;
+}
+
+.sponsor-logos4 img {
+  max-height: 150px; /* Adjust size */
+  margin-bottom: 100px; /* Space between images */
+  width: 400px;
+  height: 4000px;
+  object-fit:fill;
+  border: 2px solid #a368fc;
+  padding: 10px;
+  background: #2a2a3d;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  margin-left: 50px;
+  margin-top: 100px;
+}
+
+.sponsor-logos4 img:hover {
   transform: scale(1.1);
   box-shadow: 0 4px 15px rgba(163, 104, 252, 0.8);
 }
@@ -772,9 +870,9 @@ form button:hover {
       <li class="logo">
         <a href="index.html">
           <!-- Inside the header or wherever the logo is -->
-<img class="logo" src="images/logo.png" alt="Logo">
+          <img class="logo" src="images/logo.png" alt="Logo">
 
-        </a>
+        </a> 
       </li>
       <!-- Navigation Links -->
       <li><a href="index.html">Home</a></li>
@@ -910,10 +1008,35 @@ form button:hover {
   <!-- Sponsors Section -->
 <section class="sponsors">
   <h2>Our Sponsors</h2>
-  <div class="sponsor-logos">
-    <!-- Replace these paths with actual sponsor logos -->
+  <div class="sp">
+    <div class="row">
+      <div class="left">
+  <div class="sponsor-logos1">
+ 
     <img src="sp.png" alt="Sponsor 1">
   </div>
+  </div>
+  <div class="right">
+  <div class="sponsor-logos2">
+
+    <img src="images/sp2.png" alt="Sponsor2">
+  </div>
+  </div>
+  </div>
+    <div class="row">
+      <div class="left">
+        <div class="sponsor-logos3">
+          <img src="images/sp3.png" alt="Sponsor3">
+        </div>
+      </div>
+      <div class="right">
+       <div class="sponsor-logos4">
+        <img src="images/sp4.jpg" alt="Sponsor4">
+      </div>
+    </div>
+  </div>
+  </div>
+    </div>
 </section>
 
   <!-- Footer Section -->
